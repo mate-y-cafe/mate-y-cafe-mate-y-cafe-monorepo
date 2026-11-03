@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mapa de Mate & Café</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/mapa.css">
+</head>
+<body>
+<div class="app">
+  <header class="cab">
+    <div>
+      <p class="marca">Mate &amp; Café</p>
+      <h1>Mapa del local</h1>
+      <p class="sub-local" id="sub-local">Cargando plano…</p>
+    </div>
+    <div class="controles">
+      <label class="switch" for="sw-demo">
+        <input type="checkbox" id="sw-demo" role="switch">
+        <span class="switch-pista" aria-hidden="true"></span>
+        <span>Datos de ejemplo</span>
+      </label>
+      <div class="zoom" role="group" aria-label="Zoom del plano">
+        <button type="button" id="zoom-menos" aria-label="Alejar">−</button>
+        <output id="zoom-valor" aria-live="polite">×1</output>
+        <button type="button" id="zoom-mas" aria-label="Acercar">+</button>
+      </div>
+      <!-- Fase 4: este botón se habilita cuando un módulo 3D llama a MapaLocal.registrarVista("3d", { abrir }) -->
+      <button type="button" class="btn secundario" id="btn-3d" disabled title="Próximamente">Ver en 3D</button>
+    </div>
+  </header>
+
+  <p id="estado-carga" class="carga" role="status">Cargando plano…</p>
+  <div id="problemas" class="problemas" role="alert" hidden></div>
+
+  <main class="cuerpo">
+    <section class="plano-seccion" aria-label="Plano del local">
+      <div class="plano-marco" id="plano-marco" data-zoom="1">
+        <svg id="plano" class="plano" role="group" aria-label="Plano del local, vista desde arriba" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <p class="aviso-demo" id="aviso-demo" hidden>Los números de las insignias son de ejemplo. Apagá "Datos de ejemplo" para ver solo lo que está conectado.</p>
+    </section>
+    <div class="lateral">
+      <ul class="leyenda" id="leyenda" aria-label="Qué significan los colores"></ul>
+      <aside class="panel" id="panel" aria-label="Ficha de la zona" aria-live="polite"></aside>
+    </div>
+  </main>
+
+  <section class="zonas-lista" aria-labelledby="t-zonas">
+    <h2 id="t-zonas">Todas las zonas</h2>
+    <ul id="lista-zonas" class="chips"></ul>
+  </section>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

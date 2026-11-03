@@ -1,0 +1,325 @@
+{
+  "_nota": "Catálogo de funcionalidades del negocio. Cada zona de zonas.json apunta a una de acá por 'id'. Nada de esto copia código: solo dice dónde vive cada cosa en los repos de la organización.",
+  "organizacion": "mate-y-cafe",
+  "ramas": {
+    "pagina-clientes": "main",
+    "gestion-de-personal": "main",
+    "ventas-online": "main",
+    "sistemareservas": "main",
+    "Invitacion-online": "visitanos-qr",
+    "dise-atumate": "master"
+  },
+  "apps": {
+    "_nota": "Cuando publiques un sitio, completá su baseUrl (sin barra final) y el botón 'Abrir' de la zona se activa solo.",
+    "web": {
+      "nombre": "Página de clientes",
+      "repo": "pagina-clientes",
+      "rama": "main",
+      "baseUrl": null
+    },
+    "visita": {
+      "nombre": "Visita por QR",
+      "repo": "Invitacion-online",
+      "rama": "visitanos-qr",
+      "baseUrl": null
+    },
+    "pedidos": {
+      "nombre": "Panel de pedidos",
+      "repo": "dise-atumate",
+      "rama": "master",
+      "baseUrl": null
+    },
+    "personal": {
+      "nombre": "Gestión de personal",
+      "repo": "gestion-de-personal",
+      "rama": "main",
+      "baseUrl": null
+    }
+  },
+  "fuentes": {
+    "stock": {
+      "tipo": "json",
+      "url": "data/ejemplo/stock.json",
+      "demoUrl": "data/ejemplo/stock-demo.json",
+      "umbral": 5,
+      "origen": "pagina-clientes/data/stock.json (ejemplo, sin stock real todavía)"
+    },
+    "pedidos": {
+      "tipo": "firestore",
+      "origen": "Firestore, colección 'pedidos' (dise-atumate/pedidos.html). Sin conectar: falta la configuración de Firebase.",
+      "demo": {
+        "nuevo": 3,
+        "en-preparacion": 2,
+        "listo": 1,
+        "entregado": 12
+      }
+    },
+    "reservas": {
+      "tipo": "localStorage",
+      "clave": "mc_reservas",
+      "origen": "pagina-clientes/js/reservas.js (se guardan solo en el navegador de quien reserva)",
+      "demo": 4
+    }
+  },
+  "funcionalidades": [
+    {
+      "id": "tienda",
+      "nombre": "Tienda online",
+      "estado": "activo",
+      "descripcion": "Catálogo de mates, yerbas, termos y bombillas con carrito y compra por WhatsApp.",
+      "app": "web",
+      "ruta": "#tienda",
+      "codigos": [
+        {
+          "etiqueta": "Tienda y carrito",
+          "repo": "pagina-clientes",
+          "ruta": "js/app.js"
+        },
+        {
+          "etiqueta": "Cobros con Mercado Pago (servidor)",
+          "repo": "ventas-online",
+          "ruta": "api/crear-preferencia.js"
+        }
+      ],
+      "vivo": {
+        "fuente": "stock",
+        "metrica": "stock-bajo",
+        "etiqueta": "productos con stock bajo",
+        "umbrales": {
+          "atencion": 1,
+          "alerta": 3
+        }
+      }
+    },
+    {
+      "id": "visita-qr",
+      "nombre": "Visita por QR",
+      "estado": "parcial",
+      "descripcion": "Página de bienvenida que abre el QR del cartel, con cómo llegar y WhatsApp.",
+      "nota": "Falta definir el dominio real: la dirección del QR todavía dice TU-DOMINIO.",
+      "app": "visita",
+      "ruta": "visita.html",
+      "codigos": [
+        {
+          "etiqueta": "Página de visita",
+          "repo": "Invitacion-online",
+          "rama": "visitanos-qr",
+          "ruta": "visita.html"
+        },
+        {
+          "etiqueta": "Generador del cartel QR",
+          "repo": "Invitacion-online",
+          "rama": "visitanos-qr",
+          "ruta": "admin/qr-cartel.html"
+        }
+      ]
+    },
+    {
+      "id": "personalizador",
+      "nombre": "Diseñá tu mate (3D)",
+      "estado": "parcial",
+      "descripcion": "El cliente arma su mate con vista 3D y envía el pedido.",
+      "nota": "Los pedidos todavía no llegan al panel: falta pegar la configuración de Firebase. Hoy se confirman por WhatsApp.",
+      "app": "web",
+      "ruta": "#armar",
+      "codigos": [
+        {
+          "etiqueta": "Personalizador 3D",
+          "repo": "pagina-clientes",
+          "ruta": "js/personalizador.js"
+        },
+        {
+          "etiqueta": "Envío de pedidos a Firestore",
+          "repo": "dise-atumate",
+          "ruta": "index.html"
+        }
+      ],
+      "vivo": {
+        "fuente": "pedidos",
+        "estados": [
+          "nuevo",
+          "en-preparacion"
+        ],
+        "etiqueta": "pedidos por preparar",
+        "umbrales": {
+          "atencion": 1,
+          "alerta": 5
+        }
+      }
+    },
+    {
+      "id": "menu-local",
+      "nombre": "Menú del local",
+      "estado": "activo",
+      "descripcion": "Carta de café de especialidad, pastelería y salados con precios.",
+      "app": "web",
+      "ruta": "#menu",
+      "codigos": [
+        {
+          "etiqueta": "Datos del menú",
+          "repo": "pagina-clientes",
+          "ruta": "js/datos.js"
+        },
+        {
+          "etiqueta": "Página de la cafetería",
+          "repo": "Invitacion-online",
+          "rama": "visitanos-qr",
+          "ruta": "cafeteria.html"
+        }
+      ]
+    },
+    {
+      "id": "pedidos-barra",
+      "nombre": "Pedidos de barra",
+      "estado": "proximamente",
+      "descripcion": "Tomar y preparar los pedidos del salón (pedido, preparación, entrega).",
+      "nota": "Está en el flujo de atención de la infografía, pero todavía no hay código.",
+      "app": null,
+      "ruta": null,
+      "codigos": [
+        {
+          "etiqueta": "Flujo y reglas (infografía)",
+          "repo": "gestion-de-personal",
+          "ruta": "Infografía educativa Mate & Café Entidades, Flujo y Reglas.png"
+        }
+      ]
+    },
+    {
+      "id": "pedidos-panel",
+      "nombre": "Panel de pedidos y cobros",
+      "estado": "parcial",
+      "descripcion": "Tablero para el personal con los pedidos de la web y su estado: nuevo, en preparación, listo, entregado.",
+      "nota": "El panel está hecho pero necesita Firebase. El cobro online con Mercado Pago está en ventas-online y necesita claves.",
+      "app": "pedidos",
+      "ruta": "pedidos.html",
+      "codigos": [
+        {
+          "etiqueta": "Panel de pedidos",
+          "repo": "dise-atumate",
+          "ruta": "pedidos.html"
+        },
+        {
+          "etiqueta": "Reglas de seguridad",
+          "repo": "dise-atumate",
+          "ruta": "firestore.rules"
+        },
+        {
+          "etiqueta": "Webhook de Mercado Pago",
+          "repo": "ventas-online",
+          "ruta": "api/webhook-mp.js"
+        }
+      ],
+      "vivo": {
+        "fuente": "pedidos",
+        "estados": [
+          "listo"
+        ],
+        "etiqueta": "pedidos listos para entregar",
+        "umbrales": {
+          "atencion": 1,
+          "alerta": 4
+        }
+      }
+    },
+    {
+      "id": "reservas",
+      "nombre": "Reservas de mesa",
+      "estado": "parcial",
+      "descripcion": "Reserva por fecha, horario (cada 30 min, de 8 a 20) y cantidad de personas, con mesa asignada.",
+      "nota": "Las reservas se guardan solo en el navegador de quien reserva: al local no le llegan.",
+      "app": "web",
+      "ruta": "#reservas",
+      "codigos": [
+        {
+          "etiqueta": "Reservas",
+          "repo": "pagina-clientes",
+          "ruta": "js/reservas.js"
+        }
+      ],
+      "vivo": {
+        "fuente": "reservas",
+        "metrica": "reservas-hoy",
+        "etiqueta": "reservas para hoy",
+        "umbrales": {
+          "atencion": 1,
+          "alerta": 8
+        }
+      }
+    },
+    {
+      "id": "invitaciones",
+      "nombre": "Invitá a un amigo",
+      "estado": "activo",
+      "descripcion": "Arma una invitación con fecha, hora y mensaje, lista para mandar por WhatsApp.",
+      "app": "web",
+      "ruta": "#invitar",
+      "codigos": [
+        {
+          "etiqueta": "Invitaciones",
+          "repo": "pagina-clientes",
+          "ruta": "js/invitacion.js"
+        }
+      ]
+    },
+    {
+      "id": "musica",
+      "nombre": "Lista de música",
+      "estado": "proximamente",
+      "descripcion": "Lista de música del local que los clientes puedan ver o sugerir.",
+      "nota": "No hay código en ningún repo. La zona es una propuesta.",
+      "app": null,
+      "ruta": null,
+      "codigos": []
+    },
+    {
+      "id": "stock",
+      "nombre": "Control de stock",
+      "estado": "parcial",
+      "descripcion": "Cuánto queda de cada producto y alerta cuando algo se está terminando.",
+      "nota": "Hay un contrato definido y una API de lectura, pero los datos son de ejemplo.",
+      "app": null,
+      "ruta": null,
+      "codigos": [
+        {
+          "etiqueta": "Contrato de stock",
+          "repo": "ventas-online",
+          "ruta": "tienda/STOCK.md"
+        },
+        {
+          "etiqueta": "API de stock",
+          "repo": "ventas-online",
+          "ruta": "api/stock.js"
+        },
+        {
+          "etiqueta": "Datos de ejemplo",
+          "repo": "pagina-clientes",
+          "ruta": "data/stock.json"
+        }
+      ],
+      "vivo": {
+        "fuente": "stock",
+        "metrica": "stock-bajo",
+        "etiqueta": "productos con stock bajo",
+        "umbrales": {
+          "atencion": 1,
+          "alerta": 3
+        }
+      }
+    },
+    {
+      "id": "personal",
+      "nombre": "Gestión de personal",
+      "estado": "activo",
+      "descripcion": "Empleados, turnos semanales, asistencia, licencias y nómina mensual, con copia de respaldo.",
+      "app": "personal",
+      "ruta": "gestion-personal.html",
+      "codigos": [
+        {
+          "etiqueta": "Gestión de personal",
+          "repo": "gestion-de-personal",
+          "ruta": "gestion-personal.html"
+        }
+      ]
+    }
+  ]
+}

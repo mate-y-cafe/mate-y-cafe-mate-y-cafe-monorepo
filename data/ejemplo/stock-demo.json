@@ -1,0 +1,27 @@
+{
+  "_nota": "DEMO. Mismo stock con faltantes inventados para ver los avisos.",
+  "stock": {
+    "mate-algarrobo": 2,
+    "mate-calabaza": 10,
+    "mate-torpedo-calabaza": 10,
+    "yerba-organica-suave": 20,
+    "yerba-palo-tradicional": 20,
+    "yerba-serranas": 0,
+    "acc-termo": 4,
+    "acc-bombilla-alpaca": 15,
+    "bombilla-alpaca": 15,
+    "bombilla-acero": 3
+  },
+  "nombres": {
+    "mate-algarrobo": "Mate Imperial de Algarrobo",
+    "mate-calabaza": "Mate Calabaza Curado",
+    "mate-torpedo-calabaza": "Mate Torpedo Calabaza",
+    "yerba-organica-suave": "Yerba Orgánica Suave",
+    "yerba-palo-tradicional": "Yerba con Palo Tradicional",
+    "yerba-serranas": "Yerba Hierbas Serranas",
+    "acc-termo": "Termo Acero Inoxidable 1L",
+    "acc-bombilla-alpaca": "Bombilla de Alpaca Clásica",
+    "bombilla-alpaca": "Bombilla Alpaca",
+    "bombilla-acero": "Bombilla Acero"
+  }
+}

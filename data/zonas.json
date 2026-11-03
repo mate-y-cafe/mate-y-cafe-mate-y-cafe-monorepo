@@ -1,0 +1,831 @@
+{
+  "version": 1,
+  "unidad": "m",
+  "ejes": "x = ancho del local (izquierda a derecha). y = profundidad (entrada arriba, fondo abajo). Para el 3D: y del plano = z de Three.js, y 'alto' = eje vertical.",
+  "origen": "Ambientes y muebles: medidas de recorrido3d.html (repo gestion-de-personal). Lo marcado 'propuesto' no está en ese plano y lo agregué para ubicar funciones nuevas.",
+  "local": {
+    "nombre": "Mate & Café",
+    "direccion": "Av. Yerba Mate 1801, Palermo, CABA",
+    "ancho": 20,
+    "largo": 28.5
+  },
+  "ambientes": [
+    {
+      "id": "boutique",
+      "nombre": "Boutique de Mate",
+      "rect": [0, 0, 20, 6.1],
+      "piso": "#EFEAE1",
+      "altoPared": 3.2
+    },
+    {
+      "id": "estacion",
+      "nombre": "Armá Tu Mate",
+      "rect": [0, 6.1, 9.2, 7.4],
+      "piso": "#E4DCCF",
+      "altoPared": 3.2
+    },
+    {
+      "id": "cafeteria",
+      "nombre": "Cafetería",
+      "rect": [9.2, 6.1, 10.8, 7.4],
+      "piso": "#D9C7AE",
+      "altoPared": 3.2
+    },
+    {
+      "id": "salon",
+      "nombre": "Salón & Coworking",
+      "rect": [0, 13.5, 20, 10.5],
+      "piso": "#CBB89D",
+      "altoPared": 4.2
+    },
+    {
+      "id": "deposito",
+      "nombre": "Depósito",
+      "rect": [0, 24, 11, 4.5],
+      "piso": "#D8D0C2",
+      "altoPared": 3.2,
+      "propuesto": true
+    },
+    {
+      "id": "oficina",
+      "nombre": "Oficina",
+      "rect": [11, 24, 9, 4.5],
+      "piso": "#DDD5C8",
+      "altoPared": 3.2,
+      "propuesto": true
+    }
+  ],
+  "aperturas": [
+    {
+      "id": "puerta-principal",
+      "tipo": "puertaVidrio",
+      "x": 8,
+      "y": 0,
+      "ancho": 4,
+      "alto": 2.4,
+      "orientacion": "norte",
+      "etiqueta": "Entrada"
+    }
+  ],
+  "tipos": {
+    "estanteria": {
+      "nombre": "Estantería",
+      "color": "#B79E85",
+      "forma": "rect"
+    },
+    "vitrina": {
+      "nombre": "Vitrina",
+      "color": "#CFE7E2",
+      "forma": "rect",
+      "vidrio": true
+    },
+    "mesaExhibicion": {
+      "nombre": "Mesa de exhibición",
+      "color": "#C8B29B",
+      "forma": "rect"
+    },
+    "planta": {
+      "nombre": "Planta",
+      "color": "#6D8A55",
+      "forma": "circulo"
+    },
+    "cartel": {
+      "nombre": "Cartel",
+      "color": "#5C4033",
+      "forma": "rect"
+    },
+    "mostrador": {
+      "nombre": "Mostrador",
+      "color": "#7A5A48",
+      "forma": "rect"
+    },
+    "banqueta": {
+      "nombre": "Banqueta",
+      "color": "#9C6B43",
+      "forma": "circulo"
+    },
+    "mesaCata": {
+      "nombre": "Mesa de cata",
+      "color": "#C8B29B",
+      "forma": "rect"
+    },
+    "maquinaCafe": {
+      "nombre": "Máquina de café",
+      "color": "#9AA0A3",
+      "forma": "rect"
+    },
+    "caja": {
+      "nombre": "Caja",
+      "color": "#5C4033",
+      "forma": "rect"
+    },
+    "barra": {
+      "nombre": "Barra",
+      "color": "#7A5A48",
+      "forma": "rect"
+    },
+    "sofa": {
+      "nombre": "Sofá",
+      "color": "#8BA870",
+      "forma": "rect"
+    },
+    "mesaBaja": {
+      "nombre": "Mesa baja",
+      "color": "#B79E85",
+      "forma": "rect"
+    },
+    "mesa2": {
+      "nombre": "Mesa",
+      "color": "#C8B29B",
+      "forma": "rect"
+    },
+    "silla": {
+      "nombre": "Silla",
+      "color": "#9C6B43",
+      "forma": "rect"
+    },
+    "box": {
+      "nombre": "Box de trabajo",
+      "color": "#8BA870",
+      "forma": "rect"
+    },
+    "barraEnchufes": {
+      "nombre": "Barra con enchufes",
+      "color": "#B79E85",
+      "forma": "rect"
+    },
+    "mesaComunitaria": {
+      "nombre": "Mesa comunitaria",
+      "color": "#C8B29B",
+      "forma": "rect"
+    },
+    "parlante": {
+      "nombre": "Parlante",
+      "color": "#D9A441",
+      "forma": "circulo"
+    },
+    "escritorio": {
+      "nombre": "Escritorio",
+      "color": "#C8B29B",
+      "forma": "rect"
+    },
+    "archivero": {
+      "nombre": "Archivero",
+      "color": "#9AA0A3",
+      "forma": "rect"
+    }
+  },
+  "objetos": [
+    {
+      "id": "estanteria-1",
+      "tipo": "estanteria",
+      "ambiente": "boutique",
+      "rect": [0.3, 0.8, 1, 4.5],
+      "alto": 2.3,
+      "solido": true,
+      "etiqueta": "Estantería iluminada"
+    },
+    {
+      "id": "estanteria-2",
+      "tipo": "estanteria",
+      "ambiente": "boutique",
+      "rect": [18.7, 0.8, 1, 4.5],
+      "alto": 2.3,
+      "solido": true,
+      "etiqueta": "Estantería iluminada"
+    },
+    {
+      "id": "vitrina-1",
+      "tipo": "vitrina",
+      "ambiente": "boutique",
+      "rect": [2.2, 1.5, 3.2, 1.6],
+      "alto": 1.3,
+      "solido": true,
+      "etiqueta": "Vitrina de mates"
+    },
+    {
+      "id": "vitrina-2",
+      "tipo": "vitrina",
+      "ambiente": "boutique",
+      "rect": [14.2, 1.5, 3.4, 1.6],
+      "alto": 1.4,
+      "solido": true,
+      "etiqueta": "Vitrina de termos"
+    },
+    {
+      "id": "mesaExhibicion-1",
+      "tipo": "mesaExhibicion",
+      "ambiente": "boutique",
+      "rect": [7, 2.2, 6, 1.4],
+      "alto": 0.85,
+      "solido": true,
+      "etiqueta": "Mesa de exhibición"
+    },
+    {
+      "id": "planta-1",
+      "tipo": "planta",
+      "ambiente": "boutique",
+      "rect": [2, 4.4, 1, 1],
+      "alto": 1.7,
+      "solido": false
+    },
+    {
+      "id": "planta-2",
+      "tipo": "planta",
+      "ambiente": "boutique",
+      "rect": [17, 4.4, 1, 1],
+      "alto": 1.7,
+      "solido": false
+    },
+    {
+      "id": "cartel-1",
+      "tipo": "cartel",
+      "ambiente": "boutique",
+      "rect": [0.1, 1, 0.15, 2.4],
+      "alto": 1.8,
+      "solido": false,
+      "etiqueta": "Mate & Café"
+    },
+    {
+      "id": "estanteria-3",
+      "tipo": "estanteria",
+      "ambiente": "estacion",
+      "rect": [0.3, 6.5, 1, 5],
+      "alto": 2.1,
+      "solido": true,
+      "etiqueta": "Blends de yerba"
+    },
+    {
+      "id": "vitrina-3",
+      "tipo": "vitrina",
+      "ambiente": "estacion",
+      "rect": [1.7, 6.5, 5.1, 1],
+      "alto": 1,
+      "solido": true,
+      "etiqueta": "Mates en exhibición"
+    },
+    {
+      "id": "mostrador-1",
+      "tipo": "mostrador",
+      "ambiente": "estacion",
+      "rect": [1.5, 8.6, 6.4, 1.7],
+      "alto": 1.05,
+      "solido": true,
+      "etiqueta": "Armá tu mate"
+    },
+    {
+      "id": "banqueta-1",
+      "tipo": "banqueta",
+      "ambiente": "estacion",
+      "rect": [2, 11, 0.5, 0.5],
+      "alto": 0.75,
+      "solido": false
+    },
+    {
+      "id": "banqueta-2",
+      "tipo": "banqueta",
+      "ambiente": "estacion",
+      "rect": [3.6, 11, 0.5, 0.5],
+      "alto": 0.75,
+      "solido": false
+    },
+    {
+      "id": "banqueta-3",
+      "tipo": "banqueta",
+      "ambiente": "estacion",
+      "rect": [5.2, 11, 0.5, 0.5],
+      "alto": 0.75,
+      "solido": false
+    },
+    {
+      "id": "mesaCata-1",
+      "tipo": "mesaCata",
+      "ambiente": "estacion",
+      "rect": [4.6, 11.7, 4, 1.3],
+      "alto": 0.8,
+      "solido": true,
+      "etiqueta": "Mesa de cata"
+    },
+    {
+      "id": "planta-3",
+      "tipo": "planta",
+      "ambiente": "estacion",
+      "rect": [0.6, 12.3, 1, 1],
+      "alto": 1.7,
+      "solido": false
+    },
+    {
+      "id": "estanteria-4",
+      "tipo": "estanteria",
+      "ambiente": "cafeteria",
+      "rect": [18.9, 6.6, 0.9, 5.6],
+      "alto": 2.1,
+      "solido": true,
+      "etiqueta": "Estantería de barra"
+    },
+    {
+      "id": "vitrina-4",
+      "tipo": "vitrina",
+      "ambiente": "cafeteria",
+      "rect": [10.4, 7.1, 4.2, 1.2],
+      "alto": 1.3,
+      "solido": true,
+      "etiqueta": "Vitrina de pastelería"
+    },
+    {
+      "id": "maquinaCafe-1",
+      "tipo": "maquinaCafe",
+      "ambiente": "cafeteria",
+      "rect": [15.1, 7.1, 2.2, 1.3],
+      "alto": 1.4,
+      "solido": true,
+      "etiqueta": "Máquina de café"
+    },
+    {
+      "id": "caja-1",
+      "tipo": "caja",
+      "ambiente": "cafeteria",
+      "rect": [17.9, 7.1, 1.2, 1],
+      "alto": 1.15,
+      "solido": true,
+      "etiqueta": "Caja"
+    },
+    {
+      "id": "barra-1",
+      "tipo": "barra",
+      "ambiente": "cafeteria",
+      "rect": [10.4, 9.2, 9, 1.4],
+      "alto": 1.15,
+      "solido": true,
+      "etiqueta": "Barra"
+    },
+    {
+      "id": "banqueta-4",
+      "tipo": "banqueta",
+      "ambiente": "cafeteria",
+      "rect": [11, 11.2, 0.5, 0.5],
+      "alto": 0.75,
+      "solido": false
+    },
+    {
+      "id": "banqueta-5",
+      "tipo": "banqueta",
+      "ambiente": "cafeteria",
+      "rect": [12.6, 11.2, 0.5, 0.5],
+      "alto": 0.75,
+      "solido": false
+    },
+    {
+      "id": "banqueta-6",
+      "tipo": "banqueta",
+      "ambiente": "cafeteria",
+      "rect": [14.2, 11.2, 0.5, 0.5],
+      "alto": 0.75,
+      "solido": false
+    },
+    {
+      "id": "banqueta-7",
+      "tipo": "banqueta",
+      "ambiente": "cafeteria",
+      "rect": [15.8, 11.2, 0.5, 0.5],
+      "alto": 0.75,
+      "solido": false
+    },
+    {
+      "id": "planta-4",
+      "tipo": "planta",
+      "ambiente": "cafeteria",
+      "rect": [9.6, 12.2, 1, 1],
+      "alto": 1.7,
+      "solido": false
+    },
+    {
+      "id": "sofa-1",
+      "tipo": "sofa",
+      "ambiente": "salon",
+      "rect": [0.8, 14.2, 5.4, 2.2],
+      "alto": 0.9,
+      "solido": true,
+      "etiqueta": "Sofá lounge"
+    },
+    {
+      "id": "mesaBaja-1",
+      "tipo": "mesaBaja",
+      "ambiente": "salon",
+      "rect": [2.2, 16.8, 2.6, 1.4],
+      "alto": 0.42,
+      "solido": true
+    },
+    {
+      "id": "mesa2-1",
+      "tipo": "mesa2",
+      "ambiente": "salon",
+      "rect": [8.4, 14.4, 2.8, 1.8],
+      "alto": 0.75,
+      "solido": true,
+      "etiqueta": "Mesa"
+    },
+    {
+      "id": "silla-1",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [8, 13.9, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-2",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [11, 13.9, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-3",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [8, 16.1, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-4",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [11, 16.1, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "mesa2-2",
+      "tipo": "mesa2",
+      "ambiente": "salon",
+      "rect": [13.6, 14.4, 2.8, 1.8],
+      "alto": 0.75,
+      "solido": true,
+      "etiqueta": "Mesa"
+    },
+    {
+      "id": "silla-5",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [13.2, 13.9, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-6",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [16.2, 13.9, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-7",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [13.2, 16.1, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-8",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [16.2, 16.1, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "box-1",
+      "tipo": "box",
+      "ambiente": "salon",
+      "rect": [16.5, 17, 3.1, 2.8],
+      "alto": 1.2,
+      "solido": true,
+      "etiqueta": "Box de trabajo",
+      "rotulo": true
+    },
+    {
+      "id": "barraEnchufes-1",
+      "tipo": "barraEnchufes",
+      "ambiente": "salon",
+      "rect": [0.2, 18.6, 1, 4.8],
+      "alto": 1.05,
+      "solido": true,
+      "etiqueta": "Barra con enchufes",
+      "rotulo": true
+    },
+    {
+      "id": "banqueta-8",
+      "tipo": "banqueta",
+      "ambiente": "salon",
+      "rect": [1.6, 19.4, 0.5, 0.5],
+      "alto": 0.75,
+      "solido": false
+    },
+    {
+      "id": "banqueta-9",
+      "tipo": "banqueta",
+      "ambiente": "salon",
+      "rect": [1.6, 21.4, 0.5, 0.5],
+      "alto": 0.75,
+      "solido": false
+    },
+    {
+      "id": "mesaComunitaria-1",
+      "tipo": "mesaComunitaria",
+      "ambiente": "salon",
+      "rect": [6.4, 20.6, 8.8, 2],
+      "alto": 0.8,
+      "solido": true,
+      "etiqueta": "Mesa comunitaria",
+      "rotulo": true
+    },
+    {
+      "id": "silla-9",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [7.4, 20, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-10",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [9.6, 20, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-11",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [11.8, 20, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-12",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [14, 20, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-13",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [7.4, 22.6, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-14",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [9.6, 22.6, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-15",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [11.8, 22.6, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "silla-16",
+      "tipo": "silla",
+      "ambiente": "salon",
+      "rect": [14, 22.6, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": false
+    },
+    {
+      "id": "planta-5",
+      "tipo": "planta",
+      "ambiente": "salon",
+      "rect": [18.4, 22.4, 1.2, 1.2],
+      "alto": 2,
+      "solido": false
+    },
+    {
+      "id": "parlante-1",
+      "tipo": "parlante",
+      "ambiente": "salon",
+      "rect": [3.3, 19.3, 0.8, 0.8],
+      "alto": 1.5,
+      "solido": true,
+      "etiqueta": "Parlante",
+      "propuesto": true
+    },
+    {
+      "id": "parlante-2",
+      "tipo": "parlante",
+      "ambiente": "salon",
+      "rect": [5.1, 19.3, 0.8, 0.8],
+      "alto": 1.5,
+      "solido": true,
+      "etiqueta": "Parlante",
+      "propuesto": true
+    },
+    {
+      "id": "estanteria-dep-1",
+      "tipo": "estanteria",
+      "ambiente": "deposito",
+      "rect": [0.3, 24.4, 0.9, 3.7],
+      "alto": 2.2,
+      "solido": true,
+      "etiqueta": "Estantería de depósito",
+      "propuesto": true
+    },
+    {
+      "id": "estanteria-dep-2",
+      "tipo": "estanteria",
+      "ambiente": "deposito",
+      "rect": [3, 24.4, 0.9, 3.7],
+      "alto": 2.2,
+      "solido": true,
+      "propuesto": true
+    },
+    {
+      "id": "estanteria-dep-3",
+      "tipo": "estanteria",
+      "ambiente": "deposito",
+      "rect": [5.7, 24.4, 0.9, 3.7],
+      "alto": 2.2,
+      "solido": true,
+      "propuesto": true
+    },
+    {
+      "id": "estanteria-dep-4",
+      "tipo": "estanteria",
+      "ambiente": "deposito",
+      "rect": [8.4, 24.4, 0.9, 3.7],
+      "alto": 2.2,
+      "solido": true,
+      "propuesto": true
+    },
+    {
+      "id": "escritorio-1",
+      "tipo": "escritorio",
+      "ambiente": "oficina",
+      "rect": [12, 24.4, 2.6, 1.2],
+      "alto": 0.75,
+      "solido": true,
+      "etiqueta": "Escritorio",
+      "propuesto": true
+    },
+    {
+      "id": "escritorio-2",
+      "tipo": "escritorio",
+      "ambiente": "oficina",
+      "rect": [15.4, 24.4, 2.6, 1.2],
+      "alto": 0.75,
+      "solido": true,
+      "propuesto": true
+    },
+    {
+      "id": "silla-of-1",
+      "tipo": "silla",
+      "ambiente": "oficina",
+      "rect": [12.8, 25.7, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": true,
+      "propuesto": true
+    },
+    {
+      "id": "silla-of-2",
+      "tipo": "silla",
+      "ambiente": "oficina",
+      "rect": [16.2, 25.7, 0.6, 0.6],
+      "alto": 0.8,
+      "solido": true,
+      "propuesto": true
+    },
+    {
+      "id": "archivero-1",
+      "tipo": "archivero",
+      "ambiente": "oficina",
+      "rect": [18.6, 26, 1, 2],
+      "alto": 1.4,
+      "solido": true,
+      "etiqueta": "Archivero",
+      "propuesto": true
+    }
+  ],
+  "zonas": [
+    {
+      "id": "boutique",
+      "nombre": "Boutique de Mate",
+      "ambiente": "boutique",
+      "rect": [0, 0, 20, 6.1],
+      "icono": "🧉",
+      "funcionalidad": "tienda",
+      "etiqueta": [10, 4.9],
+      "descripcion": "Mates artesanales, yerbas, termos y bombillas. Es la tienda del local y también la tienda online."
+    },
+    {
+      "id": "entrada",
+      "nombre": "Entrada y QR",
+      "ambiente": "boutique",
+      "rect": [7.4, 0, 5.2, 1.7],
+      "icono": "📱",
+      "funcionalidad": "visita-qr",
+      "descripcion": "La puerta de vidrio. El QR del cartel lleva a una página de bienvenida con cómo llegar y el WhatsApp."
+    },
+    {
+      "id": "armar",
+      "nombre": "Armá Tu Mate",
+      "etiqueta": [4.6, 7.95],
+      "ambiente": "estacion",
+      "rect": [0, 6.1, 9.2, 7.4],
+      "icono": "✨",
+      "funcionalidad": "personalizador",
+      "descripcion": "El mostrador donde se elige mate, yerba y bombilla. En la web es el personalizador 3D."
+    },
+    {
+      "id": "vitrina",
+      "nombre": "Menú y vitrina",
+      "ambiente": "cafeteria",
+      "rect": [10.2, 6.8, 7.2, 2],
+      "icono": "☕",
+      "funcionalidad": "menu-local",
+      "descripcion": "Vitrina de pastelería y máquina de café. Acá está la carta del local."
+    },
+    {
+      "id": "caja",
+      "nombre": "Caja",
+      "ambiente": "cafeteria",
+      "rect": [17.55, 6.75, 1.9, 1.7],
+      "icono": "💳",
+      "funcionalidad": "pedidos-panel",
+      "descripcion": "La caja cobra cafetería y boutique. Desde acá se ven los pedidos que llegan de la web."
+    },
+    {
+      "id": "barra",
+      "nombre": "Barra",
+      "ambiente": "cafeteria",
+      "rect": [10.2, 8.95, 9.4, 2],
+      "icono": "🛎️",
+      "funcionalidad": "pedidos-barra",
+      "descripcion": "La barra donde se preparan y entregan los pedidos del salón."
+    },
+    {
+      "id": "reservas",
+      "nombre": "Mesas y reservas",
+      "ambiente": "salon",
+      "rect": [7.8, 13.7, 9.4, 3.2],
+      "icono": "📅",
+      "funcionalidad": "reservas",
+      "descripcion": "Mesas para 2 y 4 personas. Se reservan por horario desde la web."
+    },
+    {
+      "id": "sofa",
+      "nombre": "Sofá lounge",
+      "ambiente": "salon",
+      "rect": [0.6, 14, 6, 4.4],
+      "icono": "💌",
+      "funcionalidad": "invitaciones",
+      "descripcion": "El rincón de las rondas de mate. Desde acá se invita a un amigo con un mensaje armado."
+    },
+    {
+      "id": "musica",
+      "nombre": "Rincón de música",
+      "nombreCorto": "Música",
+      "ambiente": "salon",
+      "rect": [3, 19, 3.2, 3.6],
+      "icono": "🎵",
+      "funcionalidad": "musica",
+      "propuesto": true,
+      "descripcion": "Zona propuesta junto a la barra con enchufes: parlante y lista de música del local."
+    },
+    {
+      "id": "deposito",
+      "nombre": "Depósito",
+      "ambiente": "deposito",
+      "rect": [0, 24, 11, 4.5],
+      "icono": "📦",
+      "funcionalidad": "stock",
+      "propuesto": true,
+      "descripcion": "Zona propuesta al fondo del local: insumos y mercadería, con el control de stock."
+    },
+    {
+      "id": "oficina",
+      "nombre": "Oficina",
+      "ambiente": "oficina",
+      "rect": [11, 24, 9, 4.5],
+      "icono": "🗂️",
+      "funcionalidad": "personal",
+      "propuesto": true,
+      "descripcion": "Zona propuesta al fondo del local: turnos, asistencia, licencias y sueldos del equipo."
+    }
+  ]
+}

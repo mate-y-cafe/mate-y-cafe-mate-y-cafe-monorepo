@@ -1,0 +1,27 @@
+{
+  "_nota": "EJEMPLO. Copia de pagina-clientes/data/stock.json con nombres legibles. Reemplazar por el stock real cuando exista.",
+  "stock": {
+    "mate-algarrobo": 10,
+    "mate-calabaza": 10,
+    "mate-torpedo-calabaza": 10,
+    "yerba-organica-suave": 20,
+    "yerba-palo-tradicional": 20,
+    "yerba-serranas": 20,
+    "acc-termo": 10,
+    "acc-bombilla-alpaca": 15,
+    "bombilla-alpaca": 15,
+    "bombilla-acero": 15
+  },
+  "nombres": {
+    "mate-algarrobo": "Mate Imperial de Algarrobo",
+    "mate-calabaza": "Mate Calabaza Curado",
+    "mate-torpedo-calabaza": "Mate Torpedo Calabaza",
+    "yerba-organica-suave": "Yerba Orgánica Suave",
+    "yerba-palo-tradicional": "Yerba con Palo Tradicional",
+    "yerba-serranas": "Yerba Hierbas Serranas",
+    "acc-termo": "Termo Acero Inoxidable 1L",
+    "acc-bombilla-alpaca": "Bombilla de Alpaca Clásica",
+    "bombilla-alpaca": "Bombilla Alpaca",
+    "bombilla-acero": "Bombilla Acero"
+  }
+}

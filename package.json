@@ -1,0 +1,11 @@
+{
+  "name": "mapa-mate-y-cafe",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Mapa 2D interactivo del local Mate & Café. Sin dependencias ni build.",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node --test test/datos.test.js"
+  }
+}
